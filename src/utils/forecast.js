@@ -14,6 +14,7 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const data = body.currently
             const str = body.daily.data[0].summary + ' It is currently ' + data.temperature + ' degrees out. There is a ' + data.precipProbability + '% chance of rain.'
+            str = str + ' With: ' + body.daily.data[0].windSpeed + ' wind speed'
             callback(undefined, str)
         }
     })
